@@ -7,6 +7,9 @@ return {
   -- first key is the mode
   n = {
     -- second key is the lefthand side of the map
+    ["<A-Right>"] = { ":bnext<CR>", desc = "Next buffer" },
+    ["<A-Left>"] = { ":bprevious<CR>", desc = "Previous buffer" },
+    ["<A-Down>"] = { ":bd<CR>", desc = "Delete buffer" },
 
     -- navigate buffer tabs with `H` and `L`
     -- L = {
