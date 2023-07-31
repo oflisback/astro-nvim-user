@@ -11,6 +11,8 @@ return {
     ["<A-Left>"] = { ":bprevious<CR>", desc = "Previous buffer" },
     ["<A-Down>"] = { ":bd<CR>", desc = "Delete buffer" },
 
+    ["<leader>?"] = { "<cmd>ChatGPT<cr>", desc = "ChatGPT" },
+
     -- navigate buffer tabs with `H` and `L`
     -- L = {
     --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
