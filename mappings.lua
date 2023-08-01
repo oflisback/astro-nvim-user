@@ -19,6 +19,7 @@ return {
 		["<leader>mg"] = { "<cmd>CellularAutomaton game_of_life<cr>", desc = "Game of life" },
     ["<leader>mm"] = {"<cmd>CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
     ["<leader>mk"] = { "<cmd>Telescope keymaps<cr>", desc = "Telescope keymaps" },
+    ["<leader>mo"] = { "<cmd>BWipeout other<cr>", desc = "Only current" },
 
     -- navigate buffer tabs with `H` and `L`
     -- L = {
