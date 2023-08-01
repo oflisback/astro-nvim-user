@@ -13,6 +13,8 @@ return {
 
     ["<leader>?"] = { "<cmd>ChatGPT<cr>", desc = "ChatGPT" },
 
+    ["<leader>mp"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown preview" },
+
     -- navigate buffer tabs with `H` and `L`
     -- L = {
     --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
