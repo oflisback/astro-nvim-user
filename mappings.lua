@@ -5,6 +5,11 @@
 -- automatically pick-up stored data by this setting.)
 return {
   -- first key is the mode
+  i = {
+    -- Fundamentals
+    ["<leader>w"]  = { "<cmd>write<CR>", desc = "Write"},
+    ["<leader>q"]  = { "<cmd>quit<CR>", desc = "Quit"},
+  },
   n = {
     -- second key is the lefthand side of the map
     ["<A-Right>"] = { ":bnext<CR>", desc = "Next buffer" },
@@ -14,15 +19,20 @@ return {
     -- ChatGPT
     ["<leader>?"] = { "<cmd>ChatGPT<cr>", desc = "ChatGPT" },
 
-    -- Misc mappings
+    -- m for Misc mappings
     ["<leader>mp"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown preview" },
 		["<leader>mg"] = { "<cmd>CellularAutomaton game_of_life<cr>", desc = "Game of life" },
     ["<leader>mm"] = {"<cmd>CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
     ["<leader>mk"] = { "<cmd>Telescope keymaps<cr>", desc = "Telescope keymaps" },
     ["<leader>mo"] = { "<cmd>BWipeout other<cr>", desc = "Only current" },
 
+    -- Diagnostics
     ["<leader>lj"]  = { "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next diagnostic"},
     ["<leader>lk"]  = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Prev diagnostic"},
+
+    -- Fundamentals
+    ["<leader>w"]  = { "<cmd>write<CR>", desc = "Write"},
+    ["<leader>q"]  = { "<cmd>quit<CR>", desc = "Quit"},
 
     -- navigate buffer tabs with `H` and `L`
     -- L = {
