@@ -21,6 +21,9 @@ return {
     ["<leader>mk"] = { "<cmd>Telescope keymaps<cr>", desc = "Telescope keymaps" },
     ["<leader>mo"] = { "<cmd>BWipeout other<cr>", desc = "Only current" },
 
+    ["<leader>lj"]  = { "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next diagnostic"},
+    ["<leader>lk"]  = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Prev diagnostic"},
+
     -- navigate buffer tabs with `H` and `L`
     -- L = {
     --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
