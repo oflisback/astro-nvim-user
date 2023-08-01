@@ -11,9 +11,14 @@ return {
     ["<A-Left>"] = { ":bprevious<CR>", desc = "Previous buffer" },
     ["<A-Down>"] = { ":bd<CR>", desc = "Delete buffer" },
 
+    -- ChatGPT
     ["<leader>?"] = { "<cmd>ChatGPT<cr>", desc = "ChatGPT" },
 
+    -- Misc mappings
     ["<leader>mp"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown preview" },
+		["<leader>mg"] = { "<cmd>CellularAutomaton game_of_life<cr>", desc = "Game of life" },
+    ["<leader>mm"] = {"<cmd>CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
+    ["<leader>mk"] = { "<cmd>Telescope keymaps<cr>", desc = "Telescope keymaps" },
 
     -- navigate buffer tabs with `H` and `L`
     -- L = {
