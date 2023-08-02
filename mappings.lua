@@ -5,11 +5,6 @@
 -- automatically pick-up stored data by this setting.)
 return {
   -- first key is the mode
-  i = {
-    -- Fundamentals
-    ["<leader>w"]  = { "<cmd>write<CR>", desc = "Write"},
-    ["<leader>q"]  = { "<cmd>quit<CR>", desc = "Quit"},
-  },
   n = {
     -- second key is the lefthand side of the map
     ["<A-Right>"] = { ":bnext<CR>", desc = "Next buffer" },
