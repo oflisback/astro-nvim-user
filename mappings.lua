@@ -16,28 +16,21 @@ return {
 
     -- m for Misc mappings
     ["<leader>mp"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown preview" },
-		["<leader>mg"] = { "<cmd>CellularAutomaton game_of_life<cr>", desc = "Game of life" },
-    ["<leader>mm"] = {"<cmd>CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
+    ["<leader>mg"] = { "<cmd>CellularAutomaton game_of_life<cr>", desc = "Game of life" },
+    ["<leader>mm"] = { "<cmd>CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
     ["<leader>mk"] = { "<cmd>Telescope keymaps<cr>", desc = "Telescope keymaps" },
     ["<leader>mo"] = { "<cmd>BWipeout other<cr>", desc = "Only current" },
 
     -- Diagnostics
-    ["<leader>lj"]  = { "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next diagnostic"},
-    ["<leader>lk"]  = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Prev diagnostic"},
+    ["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next diagnostic" },
+    ["<leader>lk"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Prev diagnostic" },
 
     -- Fundamentals
-    ["<leader>w"]  = { "<cmd>write<CR>", desc = "Write"},
-    ["<leader>q"]  = { "<cmd>quit<CR>", desc = "Quit"},
+    ["<leader>w"] = { "<cmd>write<CR>", desc = "Write" },
+    ["<leader>q"] = { "<cmd>quit<CR>", desc = "Quit" },
 
-    -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    ["<Tab>"] = { "<Plug>(leap-forward-to)" },
+    ["<S-Tab>"] = { "<Plug>(leap-backward-to)" },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
