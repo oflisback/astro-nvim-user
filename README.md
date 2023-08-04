@@ -4,10 +4,15 @@
 
 Install with LspInstall, at least the following:
 
-- eslint
 - lua_ls
 - tsserver
 
-## Install null-ls
+## Install null-ls sources
+
+Install with NullLsInstall
+
+- prettierd
+- eslint_d
+- styleua
 
 Install source servers such as prettierd I guess.
