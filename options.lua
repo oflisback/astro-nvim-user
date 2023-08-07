@@ -2,7 +2,7 @@
 return {
   opt = {
     undofile = true,
-    undodir = "/home/bolland/.vim/undodir",
+    undodir = os.getenv "HOME" .. "/.vim/undodir",
 
     -- set to true or false etc.
     relativenumber = true, -- sets vim.opt.relativenumber

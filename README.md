@@ -13,6 +13,6 @@ Install with NullLsInstall
 
 - prettierd
 - eslint_d
-- styleua
+- stylua
 
 Install source servers such as prettierd I guess.
