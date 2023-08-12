@@ -13,6 +13,8 @@ Install with NullLsInstall
 
 - prettierd
 - eslint_d
-- stylua
+- styleua
+- black
+- flake8
 
 Install source servers such as prettierd I guess.
