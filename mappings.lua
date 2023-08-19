@@ -14,6 +14,8 @@ return {
     -- ChatGPT
     ["<leader>?"] = { "<cmd>ChatGPT<cr>", desc = "ChatGPT" },
 
+    ["§"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+
     -- m for Misc mappings
     ["<leader>mp"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown preview" },
     ["<leader>mg"] = { "<cmd>CellularAutomaton game_of_life<cr>", desc = "Game of life" },
@@ -50,5 +52,6 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    ["§"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
   },
 }
