@@ -13,7 +13,7 @@ Install with NullLsInstall
 
 - prettierd
 - eslint_d
-- styleua
+- stylua
 - black
 - flake8
 

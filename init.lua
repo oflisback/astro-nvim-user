@@ -28,9 +28,7 @@ return {
   lsp = {
     -- customize lsp formatting options
     formatting = {
-      filter = function(client)
-        return client.name == "null-ls"
-      end,
+      filter = function(client) return client.name == "null-ls" end,
       -- control auto formatting on save
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
@@ -53,6 +51,15 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+    },
+    config = {
+      tsserver = {
+        init_options = {
+          preferences = {
+            disableSuggestions = true,
+          },
+        },
+      },
     },
   },
 
