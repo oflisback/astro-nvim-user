@@ -1,3 +1,6 @@
+local utils = require "astronvim.utils"
+local get_icon = utils.get_icon
+
 -- Mapping data with "desc" stored directly by vim.keymap.set().
 --
 -- Please use this mappings table to set keyboard mapping since this is the
@@ -6,6 +9,21 @@
 return {
   -- first key is the mode
   n = {
+    -- Disable toggleterm, they are moved to 'm' to free up 't' for trouble.
+    ["<leader>tf"] = false,
+    ["<leader>th"] = false,
+    ["<leader>tl"] = false,
+    ["<leader>tn"] = false,
+    ["<leader>tp"] = false,
+    ["<leader>tt"] = false,
+    ["<leader>tu"] = false,
+    ["<leader>tv"] = false,
+
+    -- Terminals under misc
+    ["<leader>mt"] = { name = get_icon("Terminal", 1, true) .. "Terminals" },
+    ["<leader>mtn"] = { function() utils.toggle_term_cmd "node" end, desc = "ToggleTerm node" },
+    ["<leader>mtp"] = { function() utils.toggle_term_cmd "python" end, desc = "ToggleTerm python" },
+
     -- second key is the lefthand side of the map
     ["<A-Right>"] = { ":bnext<CR>", desc = "Next buffer" },
     ["<A-Left>"] = { ":bprevious<CR>", desc = "Previous buffer" },
