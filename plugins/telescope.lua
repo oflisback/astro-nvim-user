@@ -7,6 +7,8 @@ return {
       build = "make",
       config = function() require("telescope").load_extension "fzf" end,
     },
+    -- For trouble.providers.telescope
+    "folke/trouble.nvim",
   },
   keys = {
     -- add a keymap to browse plugin files
@@ -24,6 +26,7 @@ return {
   },
   opts = function(_, opts)
     local actions = require "telescope.actions"
+    local trouble = require "trouble.providers.telescope"
 
     return require("astronvim.utils").extend_tbl(opts, {
       defaults = {
@@ -51,7 +54,8 @@ return {
       pickers = {
         live_grep = {
           mappings = {
-            i = { ["<c-f>"] = actions.to_fuzzy_refine },
+            i = { ["<c-f>"] = actions.to_fuzzy_refine, ["<c-t>"] = trouble.open_with_trouble },
+            n = { ["<c-t>"] = trouble.open_with_trouble },
           },
         },
       },
