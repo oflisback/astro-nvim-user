@@ -18,3 +18,13 @@ Install with NullLsInstall
 - flake8
 
 Install source servers such as prettierd I guess.
+
+## Gotchas
+
+### File management with oil.nvim
+
+Oil is a slick plugin that creates a buffer based interface to the file system. Important keybinds:
+
+- '-' to open current directory in a buffer, then edit it to make changes
+- '\<CR\>' to go into a directory
+- '-' to go to parent directory
