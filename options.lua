@@ -10,6 +10,7 @@ return {
     spell = false, -- sets vim.opt.spell
     signcolumn = "yes:1", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
+    scrolloff = 0, -- allow cursor to be at the bottom or top, e.g. with zb
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
