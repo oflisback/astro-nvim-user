@@ -19,6 +19,16 @@ return {
     ["<leader>tu"] = false,
     ["<leader>tv"] = false,
 
+    -- Obsidian
+    ["<leader>o"] = { desc = "󰈙 Obsidian" },
+    ["<leader>oq"] = { "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian: Quick search" },
+    ["<leader>of"] = { "<cmd>ObsidianSearch<cr>", desc = "Obsidian: Search" },
+    ["<leader>ob"] = { "<cmd>ObsidianBacklinks<cr>", desc = "Obsidian: Back links" },
+    ["<leader>ot"] = { "<cmd>ObsidianToday<cr>", desc = "Obsidian: Today" },
+    -- Does not work well at least not with my links.
+    --    ["<leader>oo"] = { "<cmd>ObsidianFollowLink<cr>", desc = "Obsidian: Follow link" },
+    ["<leader>op"] = { "<cmd>ObsidianTemplate<cr>", desc = "Obsidian: Paste Template" },
+
     -- Terminals under misc
     ["<leader>mt"] = { name = get_icon("Terminal", 1, true) .. "Terminals" },
     ["<leader>mtn"] = { function() utils.toggle_term_cmd "node" end, desc = "ToggleTerm node" },
