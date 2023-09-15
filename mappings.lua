@@ -1,6 +1,27 @@
 local utils = require "astronvim.utils"
 local get_icon = utils.get_icon
 
+function create_or_toggle_task()
+  local line = vim.fn.getline "."
+  if string.match(line, "%[.-%]") then
+    if string.match(line, "%[X%]") then
+      line = string.gsub(line, "%[X%]", "[ ]")
+    else
+      line = string.gsub(line, "%[ %]", "[X]")
+    end
+  else
+    line = "- [ ] "
+    insert_mode = true
+  end
+  vim.fn.setline(".", line)
+  if insert_mode then
+    vim.cmd "startinsert"
+    vim.cmd "normal! $"
+  else
+    vim.cmd "stopinsert"
+  end
+end
+
 -- Mapping data with "desc" stored directly by vim.keymap.set().
 --
 -- Please use this mappings table to set keyboard mapping since this is the
@@ -24,7 +45,7 @@ return {
     ["<leader>oq"] = { "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian: Quick search" },
     ["<leader>of"] = { "<cmd>ObsidianSearch<cr>", desc = "Obsidian: Search" },
     ["<leader>ob"] = { "<cmd>ObsidianBacklinks<cr>", desc = "Obsidian: Back links" },
-    ["<leader>ot"] = { "<cmd>ObsidianToday<cr>", desc = "Obsidian: Today" },
+    ["<leader>ot"] = { "<cmd>lua create_or_toggle_task()<CR>", desc = "Obsidian: Today" },
     -- Does not work well at least not with my links.
     --    ["<leader>oo"] = { "<cmd>ObsidianFollowLink<cr>", desc = "Obsidian: Follow link" },
     ["<leader>op"] = { "<cmd>ObsidianTemplate<cr>", desc = "Obsidian: Paste Template" },
