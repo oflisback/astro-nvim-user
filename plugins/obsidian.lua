@@ -1,3 +1,11 @@
+vim.keymap.set("n", "gf", function()
+  if require("obsidian").util.cursor_on_markdown_link() then
+    return "<cmd>ObsidianFollowLink<CR>"
+  else
+    return "gf"
+  end
+end, { noremap = false, expr = true })
+
 return {
   "epwalsh/obsidian.nvim",
   lazy = false,
@@ -6,13 +14,8 @@ return {
   },
   config = function()
     require("obsidian").setup {
-      opts = {
-        dir = "~/vault-mount",
-      },
-      mappings = {
-        -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-        --        ["gf"] = require("obsidian.mapping").gf_passthrough(),
-      },
+      dir = "~/repos/projs/private/obsidian-vault/ola",
+      mappings = {},
     }
   end,
 }
