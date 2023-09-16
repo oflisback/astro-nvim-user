@@ -24,6 +24,14 @@ vim.cmd [[
     autocmd FileType markdown autocmd InsertLeave <buffer> :write
   augroup end
 
+  augroup markdownCmdHeight
+    autocmd!
+    autocmd FileType markdown set cmdheight=2
+  augroup END
+  augroup otherFilesCmdHeight
+    autocmd!
+    autocmd FileType * set cmdheight=1
+  augroup END
 ]]
 
 -- Add timestamp as extension for backup files
