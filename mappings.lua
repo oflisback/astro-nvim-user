@@ -1,8 +1,9 @@
 local utils = require "astronvim.utils"
 local get_icon = utils.get_icon
 
-function create_or_toggle_task()
-  local line = vim.fn.getline "."
+function Create_or_toggle_task()
+  local line = vim.api.nvim_get_current_line()
+  local insert_mode = false
   if string.match(line, "%[.-%]") then
     if string.match(line, "%[X%]") then
       line = string.gsub(line, "%[X%]", "[ ]")
@@ -13,7 +14,8 @@ function create_or_toggle_task()
     line = "- [ ] "
     insert_mode = true
   end
-  vim.fn.setline(".", line)
+  local line_nbr = vim.api.nvim_win_get_cursor(0)[1]
+  vim.api.nvim_buf_set_lines(0, line_nbr - 1, line_nbr, false, { line })
   if insert_mode then
     vim.cmd "startinsert"
     vim.cmd "normal! $"
@@ -45,7 +47,7 @@ return {
     ["<leader>oq"] = { "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian: Quick search" },
     ["<leader>of"] = { "<cmd>ObsidianSearch<cr>", desc = "Obsidian: Search" },
     ["<leader>ob"] = { "<cmd>ObsidianBacklinks<cr>", desc = "Obsidian: Back links" },
-    ["<leader>ot"] = { "<cmd>lua create_or_toggle_task()<CR>", desc = "Obsidian: Today" },
+    ["<leader>ot"] = { "<cmd>lua Create_or_toggle_task()<CR>", desc = "Obsidian: Today" },
     -- Does not work well at least not with my links.
     --    ["<leader>oo"] = { "<cmd>ObsidianFollowLink<cr>", desc = "Obsidian: Follow link" },
     ["<leader>op"] = { "<cmd>ObsidianTemplate<cr>", desc = "Obsidian: Paste Template" },
