@@ -14,6 +14,7 @@ return {
   },
   config = function()
     require("obsidian").setup {
+      disable_frontmatter = true,
       dir = "~/repos/projs/private/obsidian-vault/ola",
       mappings = {},
     }
