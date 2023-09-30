@@ -47,7 +47,9 @@ return {
     ["<leader>oq"] = { "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian: Quick search" },
     ["<leader>of"] = { "<cmd>ObsidianSearch<cr>", desc = "Obsidian: Search" },
     ["<leader>ob"] = { "<cmd>ObsidianBacklinks<cr>", desc = "Obsidian: Back links" },
-    ["<leader>ot"] = { "<cmd>lua Create_or_toggle_task()<CR>", desc = "Obsidian: Today" },
+    ["<leader>ot"] = { "<cmd>lua Create_or_toggle_task()<CR>", desc = "Create or toggle task" },
+    ["<leader>od"] = { "<cmd>ObsidianBridgeDailyNote<CR>", desc = "Create or open daily note" },
+    ["<leader>og"] = { "<cmd>ObsidianBridgeOpenGraph<CR>", desc = "Open graph view" },
     -- Does not work well at least not with my links.
     --    ["<leader>oo"] = { "<cmd>ObsidianFollowLink<cr>", desc = "Obsidian: Follow link" },
     ["<leader>op"] = { "<cmd>ObsidianTemplate<cr>", desc = "Obsidian: Paste Template" },
