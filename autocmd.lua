@@ -9,11 +9,6 @@ vim.cmd [[
     autocmd FileType gitcommit setlocal spell
   augroup end
 
-  augroup _markdown
-    autocmd!
-    autocmd FileType markdown setlocal spell
-  augroup end
-
   augroup _fugitive
     autocmd!
     autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -21,7 +16,7 @@ vim.cmd [[
 
   augroup _save_on_leave_insert
     autocmd!
-    autocmd FileType markdown autocmd InsertLeave <buffer> :write
+    autocmd FileType markdown autocmd InsertLeave <buffer> :if line('$') > 0 || getline(1) != '' | write | endif
   augroup end
 
   augroup markdownCmdHeight
