@@ -5,10 +5,10 @@ function Create_or_toggle_task()
   local line = vim.api.nvim_get_current_line()
   local insert_mode = false
   if string.match(line, "%[.-%]") then
-    if string.match(line, "%[X%]") then
-      line = string.gsub(line, "%[X%]", "[ ]")
+    if string.match(line, "%[x%]") then
+      line = string.gsub(line, "%[x%]", "[ ]")
     else
-      line = string.gsub(line, "%[ %]", "[X]")
+      line = string.gsub(line, "%[ %]", "[x]")
     end
   else
     line = "- [ ] "
