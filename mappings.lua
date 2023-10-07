@@ -1,6 +1,8 @@
 local utils = require "astronvim.utils"
 local get_icon = utils.get_icon
 
+local function is_blank(line) return string.match(line, "^%s*$") ~= nil end
+
 function Create_or_toggle_task()
   local line = vim.api.nvim_get_current_line()
   local insert_mode = false
@@ -11,8 +13,12 @@ function Create_or_toggle_task()
       line = string.gsub(line, "%[ %]", "[x]")
     end
   else
-    line = "- [ ] "
-    insert_mode = true
+    if is_blank(line) then
+      insert_mode = true
+      line = "- [ ] "
+    else
+      line = "- [ ] " .. line
+    end
   end
   local line_nbr = vim.api.nvim_win_get_cursor(0)[1]
   vim.api.nvim_buf_set_lines(0, line_nbr - 1, line_nbr, false, { line })
