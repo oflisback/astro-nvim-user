@@ -6,6 +6,18 @@ vim.keymap.set("n", "gf", function()
   end
 end, { noremap = false, expr = true })
 
+local function get_hostname()
+  local f = io.popen "/bin/hostname"
+  if f ~= nil then
+    local hostname = f:read "*a" or ""
+    f:close()
+    return string.gsub(hostname, "\n$", "")
+  end
+end
+
+local dir = "~/repos/projs/private/obsidian-vault/ola"
+if get_hostname() == "t490" then dir = "~/repos/projs/obsidian-vault/ola" end
+
 return {
   "epwalsh/obsidian.nvim",
   lazy = false,
@@ -15,7 +27,7 @@ return {
   config = function()
     require("obsidian").setup {
       disable_frontmatter = true,
-      dir = "~/repos/projs/private/obsidian-vault/ola",
+      dir = dir,
       mappings = {},
     }
   end,
