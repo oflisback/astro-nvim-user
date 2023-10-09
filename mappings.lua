@@ -48,6 +48,10 @@ return {
     ["<leader>tu"] = false,
     ["<leader>tv"] = false,
 
+    -- Clear astronvim mapping for better j/k with wrapped lines. They break j/k for delaytrain.nvim
+    ["j"] = false,
+    ["k"] = false,
+
     -- Obsidian
     ["<leader>o"] = { desc = "󰈙 Obsidian" },
     ["<leader>oq"] = { "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian: Quick search" },
