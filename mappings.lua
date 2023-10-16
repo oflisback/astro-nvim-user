@@ -30,6 +30,12 @@ function Create_or_toggle_task()
   end
 end
 
+-- Disable arrow keys, there are probably better alternatives for everything
+for _, key in pairs { "<Up>", "<Left>", "<Right>", "<Down>" } do
+  vim.api.nvim_set_keymap("n", key, "<Nop>", { silent = true })
+  vim.api.nvim_set_keymap("i", key, "<Nop>", { silent = true })
+end
+
 -- Mapping data with "desc" stored directly by vim.keymap.set().
 --
 -- Please use this mappings table to set keyboard mapping since this is the

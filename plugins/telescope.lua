@@ -34,6 +34,20 @@ return {
 
     return require("astronvim.utils").extend_tbl(opts, {
       defaults = {
+        mappings = {
+          i = {
+            ["<Left>"] = false,
+            ["<Right>"] = false,
+            ["<Down>"] = false,
+            ["<Up>"] = false,
+          },
+          n = {
+            ["<Left>"] = false,
+            ["<Right>"] = false,
+            ["<Down>"] = false,
+            ["<Up>"] = false,
+          },
+        },
         winblend = vim.g.neovide and vim.g.winblend + 10 or vim.g.winblend,
         selection_caret = "  ",
         layout_config = {
