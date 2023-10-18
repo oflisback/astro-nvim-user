@@ -48,6 +48,11 @@ return {
     ["<leader>tu"] = false,
     ["<leader>tv"] = false,
 
+    ["<leader>z"] = {
+      function() require("telescope").extensions.zoxide.list {} end,
+      desc = "Zoxide",
+    },
+
     -- Clear astronvim mapping for better j/k with wrapped lines. They break j/k for delaytrain.nvim
     ["j"] = false,
     ["k"] = false,
