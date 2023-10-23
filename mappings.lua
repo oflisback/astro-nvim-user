@@ -48,6 +48,11 @@ return {
     ["<leader>tu"] = false,
     ["<leader>tv"] = false,
 
+    -- Show lsp signature info for current function
+    ["<leader>lp"] = {
+      "<cmd>lua vim.lsp.buf.hover()<cr>",
+    },
+
     ["<leader>z"] = {
       function() require("telescope").extensions.zoxide.list {} end,
       desc = "Zoxide",
