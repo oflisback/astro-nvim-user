@@ -44,6 +44,10 @@ end
 return {
   -- first key is the mode
   n = {
+    ["<C-d>"] = "15jzz",
+    ["<C-u>"] = "15kzz",
+    ["<C-f>"] = "30jzz",
+    ["<C-b>"] = "30kzz",
     -- Disable toggleterm, they are moved to 'm' to free up 't' for trouble.
     ["<leader>tf"] = false,
     ["<leader>th"] = false,
