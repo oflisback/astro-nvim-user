@@ -8,8 +8,10 @@ return {
   config = function()
     require("nvim-treesitter.configs").setup {
       ensure_installed = {
+        "css",
         "bash",
         "cmake",
+        "html",
         "javascript",
         "json",
         "lua",
