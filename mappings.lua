@@ -63,6 +63,18 @@ return {
       "<cmd>lua vim.lsp.buf.hover()<cr>",
     },
 
+    -- Diffview!
+    ["<leader>gd"] = {
+      function()
+        if next(require("diffview.lib").views) == nil then
+          vim.cmd "DiffviewOpen"
+        else
+          vim.cmd "DiffviewClose"
+        end
+      end,
+      desc = "Diffview",
+    },
+
     ["<leader>z"] = {
       function() require("telescope").extensions.zoxide.list {} end,
       desc = "Zoxide",
