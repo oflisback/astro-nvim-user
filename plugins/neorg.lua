@@ -7,6 +7,7 @@ return {
     require("neorg").setup {
       load = {
         ["core.defaults"] = {},
+        ["core.qol.todo_items"] = {},
         ["core.concealer"] = {},
         ["core.dirman"] = {
           config = {

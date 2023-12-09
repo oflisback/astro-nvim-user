@@ -58,6 +58,16 @@ return {
     ["<leader>tu"] = false,
     ["<leader>tv"] = false,
 
+    -- Keys for managing TODO items and setting their states
+    ["gtu"] = { "<cmd>:Neorg core.norg.qol.todo_items.todo.task_undone<cr>" },
+    ["gtp"] = "core.norg.qol.todo_items.todo.task_pending",
+    ["gtd"] = "core.norg.qol.todo_items.todo.task_done",
+    ["gth"] = "core.norg.qol.todo_items.todo.task_on_hold",
+    ["gtc"] = "core.norg.qol.todo_items.todo.task_cancelled",
+    ["gtr"] = "core.norg.qol.todo_items.todo.task_recurring",
+    ["gti"] = "core.norg.qol.todo_items.todo.task_important",
+    ["<C-Space>"] = "core.norg.qol.todo_items.todo.task_cycle",
+
     -- Show lsp signature info for current function
     ["<leader>lp"] = {
       "<cmd>lua vim.lsp.buf.hover()<cr>",
