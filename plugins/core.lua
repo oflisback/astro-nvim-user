@@ -4,10 +4,11 @@ return {
     "max397574/better-escape.nvim",
     config = function() require("better_escape").setup { mapping = { "kj" } } end,
   },
-  { "goolord/alpha-nvim", enabled = false },
-  { "rcarriga/nvim-notify", enabled = false },
-  { "windwp/nvim-autopairs", enabled = false },
-  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  { "goolord/alpha-nvim", enabled = false }, -- Disabled because no use for it
+  { "rcarriga/nvim-notify", enabled = false }, -- Disabled because this is not eclipse
+  { "windwp/nvim-autopairs", enabled = false }, -- Disabled because autopairs is very annoying
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false }, -- Disabled because not using it
+  { "kevinhwang91/nvim-ufo", enabled = false }, -- Disabled because it messes with .org folding
   --
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   -- {
