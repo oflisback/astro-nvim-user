@@ -136,9 +136,6 @@ return {
     ["<leader>w"] = { "<cmd>write<CR>", desc = "Write" },
     ["<leader>q"] = { "<cmd>quit<CR>", desc = "Quit" },
 
-    ["<Tab>"] = { "<Plug>(leap-forward-to)" },
-    ["<S-Tab>"] = { "<Plug>(leap-backward-to)" },
-
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
@@ -151,8 +148,6 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
   t = {
     -- setting a mapping to false will disable it
