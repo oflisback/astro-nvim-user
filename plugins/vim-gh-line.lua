@@ -1,6 +1,5 @@
 return {
   "ruanyl/vim-gh-line",
-  keys = {
-    { "<leader>go", "<cmd>GHInteractive<cr>" },
-  },
+  init = function() vim.g.gh_line_map = "<leader>go" end,
+  lazy = false,
 }
