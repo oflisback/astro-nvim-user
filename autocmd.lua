@@ -29,6 +29,25 @@ vim.cmd [[
   augroup END
 ]]
 
+-- Trim trailing whitespace on save for org files
+local function trim_trailing_whitespace()
+  local save = vim.fn.winsaveview()
+  vim.cmd [[keeppatterns %s/\s\+$//e]]
+  vim.fn.winrestview(save)
+end
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.org",
+  callback = trim_trailing_whitespace,
+})
+
+-- In org mode format current line on save, this
+-- formats current table.
+local function format_current_line() vim.cmd "normal! gqgq" end
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.org",
+  callback = format_current_line,
+})
+
 -- Add timestamp as extension for backup files
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("timestamp_backupext", { clear = true }),

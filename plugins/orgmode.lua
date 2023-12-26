@@ -23,6 +23,11 @@ return {
       org_default_notes_file = "~/orgfiles/refile.org",
       org_indent_mode = "noindent",
       org_log_done = false,
+      mappings = {
+        org = {
+          org_set_tags_command = "<leader>oT",
+        },
+      },
     }
   end,
 }

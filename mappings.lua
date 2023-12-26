@@ -1,34 +1,6 @@
 local utils = require "astronvim.utils"
+local user_utils = require "user.user_utils"
 local get_icon = utils.get_icon
-
-local function is_blank(line) return string.match(line, "^%s*$") ~= nil end
-
-function Create_or_toggle_task()
-  local line = vim.api.nvim_get_current_line()
-  local insert_mode = false
-  if string.match(line, "%[.-%]") then
-    if string.match(line, "%[x%]") then
-      line = string.gsub(line, "%[x%]", "[ ]")
-    else
-      line = string.gsub(line, "%[ %]", "[x]")
-    end
-  else
-    if is_blank(line) then
-      insert_mode = true
-      line = "- [ ] "
-    else
-      line = "- [ ] " .. line
-    end
-  end
-  local line_nbr = vim.api.nvim_win_get_cursor(0)[1]
-  vim.api.nvim_buf_set_lines(0, line_nbr - 1, line_nbr, false, { line })
-  if insert_mode then
-    vim.cmd "startinsert"
-    vim.cmd "normal! $"
-  else
-    vim.cmd "stopinsert"
-  end
-end
 
 -- Disable arrow keys, there are probably better alternatives for everything
 for _, key in pairs { "<Up>", "<Left>", "<Right>", "<Down>" } do
@@ -58,16 +30,6 @@ return {
     ["<leader>tu"] = false,
     ["<leader>tv"] = false,
 
-    -- Keys for managing TODO items and setting their states
-    ["gtu"] = { "<cmd>:Neorg core.norg.qol.todo_items.todo.task_undone<cr>" },
-    ["gtp"] = "core.norg.qol.todo_items.todo.task_pending",
-    ["gtd"] = "core.norg.qol.todo_items.todo.task_done",
-    ["gth"] = "core.norg.qol.todo_items.todo.task_on_hold",
-    ["gtc"] = "core.norg.qol.todo_items.todo.task_cancelled",
-    ["gtr"] = "core.norg.qol.todo_items.todo.task_recurring",
-    ["gti"] = "core.norg.qol.todo_items.todo.task_important",
-    ["<C-Space>"] = "core.norg.qol.todo_items.todo.task_cycle",
-
     -- Show lsp signature info for current function
     ["<leader>lp"] = {
       "<cmd>lua vim.lsp.buf.hover()<cr>",
@@ -94,12 +56,14 @@ return {
     ["j"] = false,
     ["k"] = false,
 
+    -- Org mode
+    ["<leader>ot"] = { function() user_utils.apply_todo_transformation() end, desc = "Apply todo transformation" },
+
     -- Obsidian
     ["<leader>o"] = { desc = "󰈙 Obsidian" },
     ["<leader>oq"] = { "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian: Quick search" },
     ["<leader>of"] = { "<cmd>ObsidianSearch<cr>", desc = "Obsidian: Search" },
     ["<leader>ob"] = { "<cmd>ObsidianBacklinks<cr>", desc = "Obsidian: Back links" },
-    ["<leader>ot"] = { "<cmd>lua Create_or_toggle_task()<CR>", desc = "Create or toggle task" },
     ["<leader>od"] = { "<cmd>ObsidianBridgeDailyNote<CR>", desc = "Create or open daily note" },
     ["<leader>og"] = { "<cmd>ObsidianBridgeOpenGraph<CR>", desc = "Open graph view" },
     -- Does not work well at least not with my links.
