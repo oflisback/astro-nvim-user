@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   config = function()
     require("chatgpt").setup {
+      api_key_cmd = os.getenv "HOME" .. "/.config/echo-openai-key.sh",
       openai_params = {
         model = "gpt-4-1106-preview",
         frequency_penalty = 0,
