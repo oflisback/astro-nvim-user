@@ -76,9 +76,9 @@ return {
     ["<leader>mtp"] = { function() utils.toggle_term_cmd "python" end, desc = "ToggleTerm python" },
 
     -- second key is the lefthand side of the map
-    ["<A-l>"] = { ":bnext<CR>", desc = "Next buffer" },
-    ["<A-h>"] = { ":bprevious<CR>", desc = "Previous buffer" },
-    ["<A-j>"] = { ":bd<CR>", desc = "Delete buffer" },
+    ["<C-l>"] = { ":bnext<CR>", desc = "Next buffer" },
+    ["<C-h>"] = { ":bprevious<CR>", desc = "Previous buffer" },
+    ["<C-j>"] = { ":bd<CR>", desc = "Delete buffer" },
 
     -- ChatGPT
     ["<leader>?"] = { "<cmd>ChatGPT<cr>", desc = "ChatGPT" },
