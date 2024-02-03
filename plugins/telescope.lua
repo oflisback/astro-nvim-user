@@ -71,10 +71,14 @@ return {
       },
       pickers = {
         live_grep = {
+          additional_args = function() return { "--hidden" } end,
           mappings = {
             i = { ["<c-f>"] = actions.to_fuzzy_refine, ["<c-t>"] = trouble.open_with_trouble },
             n = { ["<c-t>"] = trouble.open_with_trouble },
           },
+        },
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--glob", "!.git" },
         },
       },
     })
