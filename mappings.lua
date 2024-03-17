@@ -30,6 +30,9 @@ return {
     ["<leader>tu"] = false,
     ["<leader>tv"] = false,
 
+    ["<Tab>"] = "<cmd>:bnext<CR>",
+    ["<S-Tab>"] = "<cmd>:bprev<CR>",
+
     -- Show lsp signature info for current function
     ["<leader>lp"] = {
       "<cmd>lua vim.lsp.buf.hover()<cr>",
@@ -74,11 +77,6 @@ return {
     ["<leader>mt"] = { name = get_icon("Terminal", 1, true) .. "Terminals" },
     ["<leader>mtn"] = { function() utils.toggle_term_cmd "node" end, desc = "ToggleTerm node" },
     ["<leader>mtp"] = { function() utils.toggle_term_cmd "python" end, desc = "ToggleTerm python" },
-
-    -- second key is the lefthand side of the map
-    ["<C-l>"] = { ":bnext<CR>", desc = "Next buffer" },
-    ["<C-h>"] = { ":bprevious<CR>", desc = "Previous buffer" },
-    ["<C-j>"] = { ":bd<CR>", desc = "Delete buffer" },
 
     -- ChatGPT
     ["<leader>?"] = { "<cmd>ChatGPT<cr>", desc = "ChatGPT" },
