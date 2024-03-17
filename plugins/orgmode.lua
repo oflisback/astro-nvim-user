@@ -21,7 +21,7 @@ return {
     require("orgmode").setup {
       org_agenda_files = "~/orgfiles/**/*",
       org_default_notes_file = "~/orgfiles/refile.org",
-      org_indent_mode = "noindent",
+      org_startup_indented = false,
       org_log_done = false,
       mappings = {
         org = {
