@@ -55,6 +55,15 @@ return {
       desc = "Zoxide",
     },
 
+    ["<leader>gwc"] = {
+      function() require("telescope").extensions.git_worktree.create_git_worktree() end,
+      desc = "Create git worktree",
+    },
+    ["<leader>gwl"] = {
+      function() require("telescope").extensions.git_worktree.git_worktrees() end,
+      desc = "Git worktrees",
+    },
+
     -- Clear astronvim mapping for better j/k with wrapped lines. They break j/k for delaytrain.nvim
     ["j"] = false,
     ["k"] = false,
