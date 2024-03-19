@@ -50,6 +50,8 @@ return {
       desc = "Diffview",
     },
 
+    ["<leader>gn"] = "<cmd>:Neogit<CR>",
+
     ["<leader>z"] = {
       function() require("telescope").extensions.zoxide.list {} end,
       desc = "Zoxide",
