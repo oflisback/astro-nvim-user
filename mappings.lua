@@ -61,6 +61,10 @@ return {
       function() require("telescope").extensions.git_worktree.create_git_worktree() end,
       desc = "Create git worktree",
     },
+    ["<leader>gwd"] = {
+      function() require("telescope").extensions.git_worktree.delete_git_worktree() end,
+      desc = "Delete git worktree",
+    },
     ["<leader>gwl"] = {
       function() require("telescope").extensions.git_worktree.git_worktrees() end,
       desc = "Git worktrees",
