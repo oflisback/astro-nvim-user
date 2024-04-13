@@ -5,9 +5,6 @@ return {
   },
   lazy = false,
   config = function()
-    -- Load treesitter grammar for org
-    require("orgmode").setup_ts_grammar()
-
     -- Setup treesitter
     require("nvim-treesitter.configs").setup {
       highlight = {

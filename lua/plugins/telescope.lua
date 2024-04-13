@@ -32,7 +32,7 @@ return {
     local actions = require "telescope.actions"
     local trouble = require "trouble.providers.telescope"
 
-    return require("astronvim.utils").extend_tbl(opts, {
+    return require("astrocore").extend_tbl(opts, {
       defaults = {
         mappings = {
           i = {

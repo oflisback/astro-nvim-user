@@ -1,0 +1,25 @@
+return {
+  {
+    "vhyrro/luarocks.nvim",
+    branch = "go-away-python",
+    opts = {
+      rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }, -- Specify LuaRocks packages to install
+    },
+    config = function() require("luarocks").setup {} end,
+  },
+  {
+    "rest-nvim/rest.nvim",
+    --    ft = "http",
+    commit = "91badd46c60df6bd9800c809056af2d80d33da4c",
+    lazy = false,
+    keys = {
+      {
+        "<leader>xh",
+        "<cmd>Rest run<cr>",
+        desc = "RestNvim",
+      },
+    },
+    dependencies = { "luarocks.nvim" },
+    config = function() require("rest-nvim").setup() end,
+  },
+}

@@ -1,30 +1,34 @@
-# Incomplete list of things to do after install
+# AstroNvim Template
 
-## Install language servers
+**NOTE:** This is for AstroNvim v4+
 
-Install with LspInstall, at least the following:
+A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-- lua_ls
-- tsserver
+## 🛠️ Installation
 
-## Install null-ls sources
+#### Make a backup of your current nvim and shared folder
 
-Install with NullLsInstall
+```shell
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+```
 
-- prettierd
-- eslint_d
-- stylua
-- black
-- flake8
+#### Create a new user repository from this template
 
-Install source servers such as prettierd I guess.
+Press the "Use this template" button above to create a new repository to store your user configuration.
 
-## Gotchas
+You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
 
-### File management with oil.nvim
+#### Clone the repository
 
-Oil is a slick plugin that creates a buffer based interface to the file system. Important keybinds:
+```shell
+git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+```
 
-- '-' to open current directory in a buffer, then edit it to make changes
-- '\<CR\>' to go into a directory
-- '-' to go to parent directory
+#### Start Neovim
+
+```shell
+nvim
+```
