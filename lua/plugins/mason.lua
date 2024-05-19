@@ -15,7 +15,6 @@ return {
         "jsonls",
         "lua_ls",
         "tsserver",
-        "metals",
       })
     end,
   },
