@@ -130,6 +130,7 @@ return {
         ["<Leader>mm"] = { "<cmd>CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
         ["<Leader>mk"] = { "<cmd>Telescope keymaps<cr>", desc = "Telescope keymaps" },
         ["<Leader>mo"] = { "<cmd>BWipeout other<cr>", desc = "Only current" },
+        ["<Leader>mf"] = { ":exe ':silent !Firefox %'<cr>", desc = "Open in Firefox" },
 
         -- Diagnostics
         ["<Leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next diagnostic" },
